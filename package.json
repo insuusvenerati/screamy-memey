@@ -1,5 +1,5 @@
 {
-  "name": "screamy-memmey",
+  "name": "screamy-memey",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,7 +8,8 @@
     "frontend"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cms:dev": "npm run dev --workspace=screamy-memey-cms",
+    "frontend:dev": "npm run dev --workspace=screamy-memey-frontend"
   },
   "keywords": [],
   "author": "",
