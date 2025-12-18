@@ -1,22 +1,28 @@
+---
+import fetchApi from "src/lib/strapi";
+import type { SiteSetting } from "src/types/SiteSetting";
+
+const siteSetting = await fetchApi<SiteSetting>({
+  endpoint: "site-setting",
+  wrappedByKey: "data",
+});
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={siteSetting.site_description} />
+    <meta name="og:title" content={siteSetting.site_name} />
+    <meta name="og:description" content={siteSetting.site_description} />
+    <meta name="og:image" content={siteSetting.og_image} />
+    <meta name="og:type" content={siteSetting.og_type} />
+    <title>{siteSetting.site_name}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>

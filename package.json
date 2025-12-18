@@ -9,7 +9,8 @@
   ],
   "scripts": {
     "cms:dev": "npm run dev --workspace=screamy-memey-cms",
-    "frontend:dev": "npm run dev --workspace=screamy-memey-frontend"
+    "frontend:dev": "npm run dev --workspace=screamy-memey-frontend",
+    "frontend:build": "npm run build --workspace=screamy-memey-frontend"
   },
   "keywords": [],
   "author": "",
